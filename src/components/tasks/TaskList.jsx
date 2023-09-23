@@ -14,8 +14,10 @@ function TaskList() {
     );
   }
 
+  let cols = tasks.length < 4 ? tasks.length : 4;
+
   return (
-    <div className="grid grid-cols-4 gap-2">
+    <div className={`grid grid-cols-${cols} gap-2`}>
       {tasks.map((task) => (
         <TaskCard task={task} key={task.id} />
       ))}
